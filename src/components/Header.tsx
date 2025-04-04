@@ -8,8 +8,8 @@ interface Props {
 
 export const Header: React.FC<Props> = ({onAddTodo}) => {
   return (
-    <header className='header'>
-      <h2 className='todo-list-title'>TODO LIST</h2>
+    <header className="bg-gray-600 text-white p-4 rounded-lg shadow-md">
+      <h2 className="text-2xl font-semibold text-center">TODO LIST</h2>
       <CreateTodo saveTodo={onAddTodo}/>
     </header>
   )

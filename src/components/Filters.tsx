@@ -12,27 +12,28 @@ interface Props {
 export const Filters: React.FC<Props> = ({ filterSelected, onFilterChange }) => {
 
   return (
-  <ul className="filters">
-    {
-      Object.entries(FILTERS_BUTTONS).map(([key, { href, literal }]) => {
-        const isSelected = key === filterSelected
-        const className = isSelected ? 'selected' : ''
+    <ul className="flex gap-2 justify-center">
+    {Object.entries(FILTERS_BUTTONS).map(([key, { literal }]) => {
+      const isSelected = key === filterSelected;
 
-        return (
-          <li key={key}>
-            <a href={href}
-              className={className}
-              onClick={(event) => {
-                event.preventDefault()
-                onFilterChange(key as FilterValue)
-              }}
-            >
-              {literal}
-            </a>
-          </li>
-        )
-      })
-    }
+      return (
+        <li key={key}>
+          <button
+            onClick={(event) => {
+              event.preventDefault();
+              onFilterChange(key as FilterValue);
+            }}
+            className={`px-4 py-2 rounded-lg transition ${
+              isSelected
+                ? "bg-blue-600 text-white shadow-md"
+                : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+            }`}
+          >
+            {literal}
+          </button>
+        </li>
+      );
+    })}
   </ul>
   )
 }

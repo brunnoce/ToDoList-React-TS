@@ -9,13 +9,10 @@ interface Props {
 
 export const Todos: React.FC<Props> = ({ todos, onRemoveTodo, onToggleCompletedTodo }) => {
   return (
-    <ul className="todo-list">
+    <ul className="space-y-2 p-4">
       {todos.map(todo => (
-        <li 
-          key={todo.id} 
-          className={`${todo.completed ? 'completed' : ''}`}>
+        <li key={todo.id} className={`p-2 ${todo.completed ? 'bg-gray-200' : 'bg-white'} rounded-lg shadow-md`}>
           <Todo 
-            key={todo.id}
             id={todo.id}
             title={todo.title}
             completed={todo.completed}

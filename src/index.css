@@ -1,3 +1,7 @@
+@import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+
 .todo-list-title {
   font-size: 2rem;
   font-weight: bold;

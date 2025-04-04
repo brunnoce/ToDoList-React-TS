@@ -16,22 +16,20 @@ export const Todo: React.FC<Props> = ({id, title, completed, onRemoveTodo, onTog
   // }
   
   return (
-    <div className='view'>
+    <div className="flex items-center justify-between bg-white p-4 rounded-lg shadow">
       <input
-        className='toggle'
-        type='checkbox'
+        className="mr-3"
+        type="checkbox"
         checked={completed}
-        onChange={(event) => {
-          onToggleCompletedTodo({id, completed: event.target.checked})
-        }} 
-        // onChange={handleChangeCheckbox} 
+        onChange={(event) => onToggleCompletedTodo({id, completed: event.target.checked})} 
       />
-      <label>{title}</label>
+      <label className={`flex-1 ${completed ? "line-through text-gray-500" : "text-gray-900"}`}>{title}</label>
       <button 
-        className='destroy' 
-        onClick={() => {
-          onRemoveTodo({id})
-        }}/>
+        className="text-red-500 hover:text-red-700 transition"
+        onClick={() => onRemoveTodo({id})}
+      >
+        ❌
+      </button>
     </div>
   )
 } 

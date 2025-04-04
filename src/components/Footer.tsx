@@ -1,5 +1,7 @@
 import { FilterValue } from "../types"
 import { Filters } from "./Filters"
+import { Badge } from "flowbite-react";
+import { HiClock } from "react-icons/hi";
 
 interface Props {
   activeCount: number
@@ -17,27 +19,19 @@ export const Footer: React.FC<Props> = ({
   onClearCompleted
 }) => {
     return(
-      <footer className="footer">
+      <footer className="flex justify-between items-center p-4 bg-gray-100 rounded-lg shadow">
         <span className="todo-count">
-          <strong>{activeCount}</strong> tareas pendientes
+          <Badge icon={HiClock} color="gray"><strong>{activeCount}</strong> tareas pendientes</Badge>
         </span>
-
-        <Filters 
-          filterSelected={filterSelected}
-          onFilterChange={handleFilterChange}
-        />
-
-        {
-          completedCount > 0 && (
-            <button 
-              className="clear-completed"
-              onClick={onClearCompleted}
-            >
-              Borrar completadas
-            </button>
-          )
-        }
-
+        <Filters filterSelected={filterSelected} onFilterChange={handleFilterChange} />
+        {completedCount > 0 && (
+          <button 
+            className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition"
+            onClick={onClearCompleted}
+          >
+            Borrar completadas
+          </button>
+        )}
       </footer>
     )
 }
