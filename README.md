@@ -13,7 +13,7 @@ Una aplicación simple de lista de tareas creada con **React** y **TypeScript**.
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
-- CSS / Tailwind / Flowbite
+- [Tailwind](https://tailwindcss.com/) / [Flowbite](https://flowbite.com/)
 
 ## 📦 Instalación
 
