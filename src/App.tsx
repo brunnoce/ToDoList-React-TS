@@ -4,6 +4,7 @@ import { TodoId, Todo, FilterValue, TodoTitle } from './types'
 import { TODO_FILTERS } from './consts'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
+import './index.css';
 
 const mockTodos = [
   {
@@ -76,21 +77,21 @@ const App = () => {
   }
 
   return (
-    <div className='todoapp'>
-      <Header onAddTodo={handleAddTodo} />
-      <Todos 
-        onToggleCompletedTodo={handleCompleted}
-        onRemoveTodo={handleRemove}
-        todos={filteredTodos} 
-      />
-      <Footer 
-        activeCount={activeCount}
-        completedCount={completedCount}
-        filterSelected={filterSelected}
-        onClearCompleted={handleRemoveAllCompleted}
-        handleFilterChange={handleFilterChange}
-      />
-    </div>
+      <div className="todoapp bg-white p-6 rounded-lg shadow-lg w-full max-w-3xl">
+        <Header onAddTodo={handleAddTodo} />
+        <Todos 
+          onToggleCompletedTodo={handleCompleted}
+          onRemoveTodo={handleRemove}
+          todos={filteredTodos} 
+        />
+        <Footer 
+          activeCount={activeCount}
+          completedCount={completedCount}
+          filterSelected={filterSelected}
+          onClearCompleted={handleRemoveAllCompleted}
+          handleFilterChange={handleFilterChange}
+        />
+      </div>
   )
 }
 

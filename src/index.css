@@ -2,11 +2,16 @@
 @plugin "flowbite-react/plugin/tailwindcss";
 @source "../.flowbite-react/class-list.json";
 
-.todo-list-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #140b68;
-  text-align: center;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
+body {
+  background-image: url('/topography.svg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  min-height: 100vh; 
 }
