@@ -2,16 +2,16 @@
 @plugin "flowbite-react/plugin/tailwindcss";
 @source "../.flowbite-react/class-list.json";
 
-body {
-  background-image: url('/topography.svg'); 
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
 #root {
   display: flex;
   justify-content: center;
   align-items: center; 
   min-height: 100vh; 
+}
+
+body {
+  background-image: url('/topography.svg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
